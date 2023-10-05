@@ -1,0 +1,83 @@
+body{
+    background: url("adminimages/backg3.jpg") no-repeat fixed;
+    background-size: cover;
+}
+form{
+    border: 2px solid grey;
+    width: 80%;
+    margin-bottom: 10px;
+    margin: auto;
+    align-items: center;
+  
+}
+h2{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+}
+input{
+    width: 95%;
+    padding: 12px 12px;
+    color: white;
+    font-size: 16px;
+    margin:8px;
+    display: inline-block;
+    border: 1px solid grey;
+    border-radius: 25px;
+    background-color:rgba(128,128,128,0.45);
+    box-sizing: border-box;
+}
+button{
+    background-color:#ff4d4d;
+    filter: contrast(2);
+    font-size: 16px;
+    color: white;
+    margin:8px;
+    padding: 14px 2px;
+    border: none;
+    width: 30%;
+     border-radius: 50px;
+}
+button:hover {
+    opacity: 0.8;
+}
+.imgcontainer{
+
+    text-align: center;
+    margin: 20px 0 12px 0;
+}
+img.avatar{
+    border-radius: 25% 25%;
+    width: 40%;
+}
+div.container{
+    margin-top: 50px;
+    margin-left: 45%;
+    margin-bottom: 10px;
+    padding-bottom:15px;
+     width: 50%;
+    background-color: rgba(128,128,128,0.35);
+}
+span >a{
+    float: right;
+    padding-top: 16px;
+    padding-right: 20px;
+    color: white;
+}
+span > a:hover{
+    color: blue;
+}
+.navbar{
+    background-color: #ff4d4d;
+    padding: 10px 10px;
+    color: #ff0404;
+}
+.navbar a{
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+}
