@@ -56,7 +56,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)
                 </div>
                 <hr>
                 <?php 
-                $limit=3;
+                $limit=5;
                 if(isset($_GET['page'])){
                     $page = $_GET['page'];
                 }
@@ -85,7 +85,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)
                         <td><?php echo $count++?></td>
                         <td><?php echo $row['page_name']; ?></td>
                         <td><?php echo $row['page_type']; ?></td> 
-                        <td id="example" style="text-align:left"><div style="width:100%; max-height:110px; overflow:auto">
+                        <td id="example" style="text-align:left; font-size:16px"><div style="width:100%; max-height:110px; overflow:auto">
                         <?php echo $row['page_data']; ?></div></td>
                         <td id="he" style="width:100px;">
                         <a style="background-color:aqua;" href='update_page_details.php?type=<?php echo $row['page_type']; ?>'><span class="glyphicon glyphicon-edit"></span></a>
@@ -119,7 +119,8 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)
                   }else{
                     $active= "";
                   }
-                  echo '<li><a href="pages.php?page='.$i.'">'.$i.'</a></li>';
+                  echo '<li class ="'.$active.'"><a href="pages.php?page='.$i.'">'.$i.'</a></li>';
+                  
 
                 }
                 if($total_page> $page){

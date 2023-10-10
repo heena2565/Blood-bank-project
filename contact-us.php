@@ -23,6 +23,7 @@
 
 <body>
     <?php 
+    $currentPage="contactus";
     include('header.php');
     ?>
     <?php

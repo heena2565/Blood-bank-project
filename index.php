@@ -21,8 +21,11 @@
 </head>
 
 <body>
-<?php include('header.php'); ?>
-    
+<?php 
+$currentPage="home";
+include('header.php');
+ ?>
+
 
     <!-- Header Start -->
     <section id="header">

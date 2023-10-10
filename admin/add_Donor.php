@@ -51,7 +51,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
                     </div>
                     <div class="col-lg-4 mb-4"><br>
                         <div class="font-italic">Email<span style="color: red;">*</span></div>
-                        <div><input type="email" name="fullname" class="form-control" required></div>
+                        <div><input type="email" name="emailid" class="form-control" required></div>
                     </div>
                 </div>
                 <div class="row">
@@ -70,7 +70,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
                     </div>
                     <div class="col-lg-4 mb-4"><br>
                         <div class="font-italic">Blood Group<span style="color: red;">*</span></div>
-                        <div><select name="Blood" class="form-control" required>
+                        <div><select name="blood" class="form-control" required>
                             <option value="" selected disabled>Select</option>
                             <?php 
                             include 'conn.php';
@@ -85,10 +85,14 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
                     </div>
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-lg-4 mb-4"><br>
-                        <div class="font-italic">Adress<span style="color: red;">*</span></div>
-                        <div><textarea class="form-control" name="address" required></textarea></div>
+               <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="font-italic">City<span style="color: red;">*</span></div>
+                        <div><input type="text" name="city_name" class="form-control" required></div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="font-italic">Nearest Center<span style="color: red;">*</span></div>
+                        <div><input type="text" name="hospital_name" class="form-control" required></div>
                     </div>
                 </div>
 

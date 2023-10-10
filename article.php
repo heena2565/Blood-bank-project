@@ -22,6 +22,7 @@
 
 <body>
 <?php 
+$currentPage="articles";
 include('header.php');
 ?>
  <!-- Navigator Start -->
@@ -42,22 +43,17 @@ include('header.php');
             <div class="details-container">
                 <div class="title">Donations Benefits</div>
                 <p>
-                   
+                   <?php
+                   include 'db_conn.php';
+                   $q= "select * from pages where page_type= 'articles'";
+                   $result=mysqli_query($conn, $q) or  die("query failed.");
+                   if(mysqli_num_rows($result)>0){
+                    while($row= mysqli_fetch_assoc($result)){
+                        echo $row['page_data'];
+                    }
+                   }
+                    ?>
 
-&emsp;&emsp;Regular blood donation is linked to lower blood pressure and a lower risk for heart attacks. “It definitely helps to reduce cardiovascular risk factors,” says Dr. DeSimone.
-
-What’s the connection? “If your hemoglobin is too high, blood donation helps to lower the viscosity of the blood, which has been associated with the formation of blood clots, heart attacks, and stroke,” Dr. DeSimone says.
-<br>&emsp; &emsp; “Interestingly, these benefits are more significant in men compared to women. We think maybe it’s because women have menstrual cycles, so they do it naturally without donating blood.”
-
-People with a condition called hereditary hemochromatosis must have blood removed regularly to prevent the buildup of iron.Fortunately, this blood can benefit others.
-
-<br>&emsp; &emsp;“These are essentially healthy patients who are otherwise normal, but they have a gene mutation where they make too much blood, and they make too much normal blood,” Dr. Vossoughi says. “So we can use that blood.”
-
-The New York Blood Center Hereditary Hemochromatosis Program allows people with hemochromatosis to donate blood rather than have it removed and thrown away. “Instead of having to go to a clinic or go to one of our phlebotomy centers every few months to reduce their blood volume, they can go to any local blood drive,” Dr. Vossoughi says. “That blood will then be used for somebody who needs it.”
-
-<br>&emsp;&emsp;One blood donation can save up to three lives, according to Dr. DeSimone. People usually donate because it feels good to help others, and altruism and volunteering have been linked to positive health outcomes, including a lower risk for depression and greater longevity.
-
-“Giving blood is a way to engage in the immediate community and help people around you,” Dr. Vossoughi adds. “People who do these types of things and engage in their community in this way tend to have better health and longer lives.”
                 </p>
                 <strong><a>Share this article:</a></strong>
                 <div class="icons">
@@ -86,11 +82,17 @@ The New York Blood Center Hereditary Hemochromatosis Program allows people with 
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">Blood Types</h4>
-                                        <p class="card-text">Blood types are classified based as:
- There are four main blood types: A, B, AB, and O. 
-These are determined by the presence or absence of two antigens, A and B, on the surface of red blood cells.
- Blood type A has A antigens, blood type B has B antigens, blood type AB has both A and B antigens, and blood type O has neither A nor B antigens. 
-</p>
+                                        <p class="card-text">
+                                            <?php 
+                                            $q="select * from pages where page_type='bloodgroups'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?>
+                                           </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>
@@ -107,9 +109,16 @@ These are determined by the presence or absence of two antigens, A and B, on the
                                     <div class="card-body">
                                         <h4 class="card-title">Donations Benefits</h4>
                                         <p class="card-text">
-                                        Donating blood is a noble act with a multitude of benefits. Firstly, it's a lifesaving endeavor;
-                                         a single donation can potentially save up to three lives by providing crucial blood components needed for medical treatments, surgeries, and emergencies. 
-                                         Ensuring your well-being while helping maintain balanced iron levels in your body. </p>
+                                        <?php 
+                                            $q="select * from pages where page_type='benefits'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?>
+                                         </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>
@@ -125,8 +134,17 @@ These are determined by the presence or absence of two antigens, A and B, on the
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">Disease Protection</h4>
-                                        <p class="card-text">Donating blood not only saves lives but also plays a crucial role in disease protection. 
-                                        Regular blood donations help reduce the risk of several diseases, including heart disease and cancer, by maintaining healthy iron levels in the body.
+                                        <p class="card-text">
+                                        <?php 
+                                            $q="select * from pages where page_type='protection'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?>
+                                        </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>
@@ -142,10 +160,17 @@ These are determined by the presence or absence of two antigens, A and B, on the
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">How To Donate?</h4>
-                                        <p class="card-text">To get started, ensure you meet the eligibility criteria, 
-                                        which typically include being at least 17 years old, weighing a minimum of 110 pounds, and being in good health.
-                                         Once you've confirmed your eligibility, find a nearby blood donation center or mobile blood drive, 
-                                        often hosted by hospitals, clinics, or community organizations. </p>
+                                        
+                                        <p class="card-text">
+                                        <?php 
+                                            $q="select * from pages where page_type='how_to'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?> </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>

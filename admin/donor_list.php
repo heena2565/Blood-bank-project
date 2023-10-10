@@ -51,7 +51,7 @@ if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']== true){
             <hr>
             <?php 
             include 'conn.php';
-            $limit=10;
+            $limit=5;
             if(isset($_GET['page'])){
                 $page=$_GET['page'];
             }else{
@@ -59,7 +59,7 @@ if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']== true){
             }
             $offset = ($page-1) *$limit;
             $count=$offset+1;
-            $q="select * from donor_details join blood where donor_Details.donor_blood=blood.blood_id LIMIT {$offset}, {$limit}";
+            $q="select * from donor_details join blood where donor_details.donor_blood=blood.blood_group LIMIT {$offset}, {$limit}";
              $result=mysqli_query($conn,$q);
              if(mysqli_num_rows($result)>0){
 
@@ -74,7 +74,7 @@ if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']== true){
                     <th style="text-align: center;">Age </th>
                     <th style="text-align: center;">Gender </th>
                     <th style="text-align: center;">Blood Group </th>
-                    <th style="text-align: center;">Address</th>
+                    <th style="text-align: center;">Hospital Name</th>
                     <th style="text-align: center;">Action</th>
                 </thead>
                 <tbody>
@@ -88,7 +88,7 @@ if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']== true){
                         <td><?php echo $row['donor_age'] ?></td>
                         <td><?php echo  $row['donor_gender'] ?></td>
                         <td><?php echo  $row['blood_group'] ?></td>
-                        <td><?php echo  $row['donor_address'] ?></td>
+                        <td><?php echo  $row['hospital_name'] ?></td>
                         <td id="he" style="width:100px;">
                       <a style="background-color:aqua;" href='delete.php?id=<?php echo $row['donor_id'];?>'>Delete</td>
                     </tr>
@@ -100,7 +100,7 @@ if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']== true){
 
             <div class="table-responsive" style="text-align: center;">
             <?php
-            $sql = "select * from donor_Details";
+            $sql = "select * from donor_details";
             $result1= mysqli_query($conn, $sql) or die("Query Failed");
             if(mysqli_num_rows($result1)>0){
                 $total_records= mysqli_num_rows($result1);
@@ -121,7 +121,7 @@ if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']== true){
                     echo '<li class= "'.$active.'"><a href="donor_list.php?page= '.$i.' "> '.$i.'</a></li>';
                 }
                 if($total_page > $page){
-                    echo '<li><a href="donor_list.php?page='.($page + 1).'"><Next </a></li>';
+                    echo '<li><a href="donor_list.php?page='.($page + 1).'">Next</a></li>';
 
                 }
                echo "</ul>";

@@ -20,7 +20,10 @@
     <title>Why donate blood?</title>
 </head>
 <body>
-<?php include('header.php'); ?>
+
+<?php 
+$currentPage="whydonateblood";
+include('header.php'); ?>
     
 
     <!-- Navigator Start -->

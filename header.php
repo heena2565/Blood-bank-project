@@ -68,19 +68,19 @@
             <img src="imgs/logo.png" width="18%"></img>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item <?php echo ($currentPage == 'home') ? 'active' : ''; ?>">
                         <a class="nav-link" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?php echo ($currentPage == 'home') ? 'active' : ''; ?>">
                         <a class="nav-link " href="About-us.php">About Us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item  <?php echo ($currentPage == 'home') ? 'active' : ''; ?>">
                         <a class="nav-link" href="article.php">Articles</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?php echo ($currentPage == 'home') ? 'active' : ''; ?>">
                         <a class="nav-link" href="why-donate-blood.php">Why Donate Blood?</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?php echo ($currentPage == 'home') ? 'active' : ''; ?>">
                         <a class="nav-link" href="contact-us.php">Contact Us</a>
                     </li>
                 </ul>

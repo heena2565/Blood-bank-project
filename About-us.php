@@ -22,6 +22,8 @@
 
 <body>
     <?php
+    $active="About-us";
+    $currentPage="aboutus";
     include('header.php'); 
     ?>
     <!-- Navigator Start -->

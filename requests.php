@@ -20,7 +20,7 @@
     <title>Donations</title>
 </head>
 
-<bod>
+<body>
 
   <?php include 'header.php'; ?>
     <!-- Navigator Start -->
@@ -44,7 +44,7 @@
         <div class="container">
                 <?php
             include 'db_Conn.php';
-            $limit=10;
+            $limit=5;
            if(isset($_GET['page'])){
                    $page=$_GET['page'];
               }
@@ -53,16 +53,13 @@
               }
        $offset = ($page-1) *$limit;
        $count = $offset+1;
-      $q= "select * from donor_details inner join city on donor_details.donor_city = city.city_name order by rand() limit 5"; 
+      $q= "select * from donor_details LIMIT {$offset}, {$limit}"; 
       $result = mysqli_query($conn, $q) or die('Query unsuccessful.');
       if(mysqli_num_rows($result)>0){
-      while ($row=mysqli_fetch_assoc($result)){
-          $total_Records= mysqli_num_rows($result);
-         $total_pages= ceil($total_Records / $limit);
-  ?>
-     
+     ?>
             <div class="row">
                 <div class="col-lg-12">
+                <?php while($row=mysqli_Fetch_Assoc($result)){ ?>
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="type">
@@ -72,46 +69,53 @@
                         <div class="data col-lg-6">
                             <h4>Name:<?php echo $row['donor_name']; ?></h4>
                             <h4> Cenetr:<?php echo $row['hospital_name']; ?></h4>
-                            <h4 name="city_name"> City:<?php echo $row['city_name']; ?> </h4>
+                            <h4 name="city_name"> City:<?php echo $row['donor_city']; ?> </h4>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
+            <?php } ?>
             <div>
             <br>          
         </div>
-        <?php  }
-                 } 
-                 else{
-                    echo '<div class="alert alert-danger">No Donor Found For your search Blood group </div>';
-                 }
-                 ?>
-                </div>
-            </div>
-                </div>         
-        </div>
-        <div class="page-num">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-        </div>
+      <div class="row">
+        <div class="col-lg-12 text-center" >
+        <ul class="pagination justify-content-center">
+        <?php
+        $sql1 = "SELECT * FROM donor_details";
+        $result1 = mysqli_query($conn, $sql1) or die("Query Failed.");
+
+        if(mysqli_num_rows($result1) > 0){
+
+          $total_records = mysqli_num_rows($result1);
+
+          $total_page = ceil($total_records / $limit);
+          if($page > 1){
+            echo '<li class="page-item"><a class="page-link" href="requests.php?page='.($page - 1).'">Prev</a></li>';
+          }
+          for($i = 1; $i <= $total_page; $i++){
+            if($i == $page){
+              $active = "active";
+            }else{
+              $active = "";
+            }
+            echo '<li class="page-item '.$active.'"><a class="page-link" href="requests.php?page='.$i.'">'.$i.'</a></li>';
+          }
+          if($total_page > $page){
+            echo '<li class="page-item"><a class="page-link" href="requests.php?page='.($page + 1).'">Next</a></li>';
+          }
+        }
+        ?>
+        </ul>
+      </div>
+    </div>
+      </div>
+      </div>
+     </div>         
+    </div>
+
+        
     </section>
     <!-- Requests End -->
 
