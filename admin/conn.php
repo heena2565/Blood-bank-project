@@ -1,4 +1,3 @@
 <?php
-
-$conn= mysqli_Connect("localhost", "root", "", "blood_bank");
+$conn= mysqli_Connect("localhost", "root", "", "bloodbank");
 ?>

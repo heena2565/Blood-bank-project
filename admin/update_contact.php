@@ -1,3 +1,4 @@
+>?php 'conn.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +22,6 @@
 </head>
 <body style="color:black">
     <?php 
-    include 'conn.php';
     include 'session.php';
     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']== true){
     ?>
@@ -47,8 +47,7 @@
                     $address =$_POST['address'];
                     $number =$_POST['number'];
                     $email =$_POST['email'];
-                     $conn = mysqli_connect("localhost", "root", "","bloodbank");
-                     $sql= "update contact_info set contact_address ='{$address}', contact_mail='{$email}', contact_phone='{$number}' where contact_id='1'";
+                    $sql= "update contact_info set contact_address ='{$address}', contact_mail='{$email}', contact_phone='{$number}' where contact_id='1'";
                     $result= mysqli_query($conn, $sql) or die("query unsuccessful");
                     echo '<div class="alert alert-success"><b>Contact Details Updated Successfully.</b>,/div>';
                     mysqli_close($conn);

@@ -163,7 +163,7 @@ include('header.php');
                                         
                                         <p class="card-text">
                                         <?php 
-                                            $q="select * from pages where page_type='how_to'";
+                                            $q="select * from pages where page_type='howto'";
                                             $result=mysqli_query($conn, $q);
                                             if(mysqli_num_rows($result)>0){
                                                 while($row=mysqli_fetch_assoc($result)){

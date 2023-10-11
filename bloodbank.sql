@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 05, 2023 at 11:39 AM
+-- Generation Time: Oct 11, 2023 at 11:36 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -137,7 +137,8 @@ INSERT INTO `contact_query` (`query_id`, `query_name`, `query_mail`, `query_numb
 (5, '', '98832372019', 'giahs@yaho', 'aksatdahdanmafudhfsdajhfesbfj', '2023-10-04 11:12:56', NULL),
 (6, '', '98832372019', 'giahs@yaho', 'aksatdahdanmafudhfsdajhfesbfj', '2023-10-04 11:12:56', NULL),
 (7, 'Himani', '98832372019', 'giahs@yaho', 'aksatdahdanmafudhfsdajhfesbfj', '2023-10-04 11:13:40', NULL),
-(8, 'Himani', '98832372019', 'giahs@yaho', 'aksatdahdanmafudhfsdajhfesbfj', '2023-10-04 11:13:56', NULL);
+(8, 'Himani', '98832372019', 'giahs@yaho', 'aksatdahdanmafudhfsdajhfesbfj', '2023-10-04 11:13:56', NULL),
+(9, 'Himani', '8985788578', 'OKOK@gmail', 'this  is a sample message.', '2023-10-11 09:26:04', NULL);
 
 -- --------------------------------------------------------
 
@@ -166,7 +167,8 @@ INSERT INTO `donor_details` (`donor_id`, `donor_name`, `donor_number`, `donor_ma
 (16, 'Riya Gupta', '7835247276', 'Riyagupta@yahoo.com', 24, 'female', 'AB+', 'Mumbai', 'City hospital'),
 (17, 'Shikha Singh', '9887358293', 'sikha338@gmail.com', 28, 'female', 'O+', 'New Delhi', 'MPG Hospital'),
 (19, 'Himani Mehra', '9837672006', 'himani_ok@gmail.com', 23, 'female', 'O+', 'New ', 'Safdarjang Hospital'),
-(20, 'Jaya', '8957363585', 'jaya@outlook.com', 26, 'female', 'A-', 'Mumbai', 'City Hospital');
+(20, 'Jaya', '8957363585', 'jaya@outlook.com', 26, 'female', 'A-', 'Mumbai', 'City Hospital'),
+(21, 'Rohit Sharma', '8006661973', 'rohitsharma77@yahoo.com', 31, 'male', '3', 'Bangalore', 'AIIMS Hospital');
 
 -- --------------------------------------------------------
 
@@ -200,13 +202,17 @@ CREATE TABLE `pages` (
 --
 
 INSERT INTO `pages` (`page_id`, `page_name`, `page_type`, `page_data`) VALUES
-(2, 'Why Become Donor', 'donor', '<span style=\" font-family:&quot;Open Sans&quot;, Arial, sans-serif; font-size:16px;  text-align:justify;\">Blood is the most precious gift that anyone can give to another-A gift of life. A decision to donate your blood can save a life, or even several if your blood is separated to its components-red cells, platelets and plasma- which can be used individually for patients with specific conditions. Safe blood saves lives and improves health. Blood transfusion is needed for: </span>\n<ul><span style=\" font-family:&quot;Open Sans&quot;, Arial, sans-serif; font-size:16px;  text-align:justify;\">\n<li>Women with complications of pregnancy, such as ectopic pregnancies and haemorrage before, during and after childbirth.</li>\n<li>People with severe trauma following man-made and natural disasters.</li>\n<li>Children with severe anaemia often resulting from malaria or malnutrition.</li>\n<li>Many complex medical and surgical procedures and cancer patients.</li>\n</ul></span>\n<br><span style=\" font-family:&quot;Open Sans&quot;, Arial, sans-serif; font-size:16px;  text-align:justify;\">It is also needed for regular transfusion for people with conditions such as thalassaemia and sickle cell disease and is used to make products as clotting factors for people with homophilia. There is a constant need for regular blood supply cause blood can be stored for only a limited time before use.Regular blood donations by a sufficient number of healthy people needed to ensure that safe blood will be available whenever wherever needed.</span>'),
-(3, 'About Us ', 'aboutus', '<span style=\" font-family: &quot;Open Sans&quot;, Arial, sans-serif;text-align:justify; font-size:16px;\">Blood bank is a place where blood bag that is collected from blood donation events is stored in one place. The term “blood bank” refers to a division of a hospital laboratory where the storage of blood product occurs and where proper testing is performed to reduce the risk of transfusion related events . The process of managing the blood bag that is received from the blood donation events needs a proper and systematic management. The blood bag must be handled with care and treated thoroughly as it is related to someone’s life. The development of Web-based Blood Bank And Donation Management System is proposed to provide a management functional to the blood bank in order to handle the blood bag and to make entries of the individuals who want to donate blood and who are in need.</span>'),
-(4, 'The need For Blood', 'needforblood', '<span style=\"font-family:&quot;Open Sans&quot;, Arial, sans-serif; text-align:justify; font-size:16px;\">There are many reasons patients need blood. A common misunderstanding about blood usage is that accident victims are the patients who use the most blood include those:<br>     1)Being treated for cancer.<br>   2) Undergoing orthopedic surgeries<br>   3)Undergoing cardiovascular surgeries<br>  4) Being treated for inherited blood disorders.</span>\n'),
-(5, 'Blood Tips', 'bloodtips', '<span style=\" font-family:&quot;Open Sans&quot;, Arial, sans-serif; text-align:justify;font-size:16px;\">1)You must be in good health.<br> 2) Hydrate and eat a healthy meal before your donation.<br>3)You\'re never too old to donate blood.<br> 4)Rest and relaxed.<br> 5)Don\'t forget your FREE post-donation snack.</span>'),
-(6, 'Who You Could Help', 'whoyouhelp', '<span style=\"font-family:&quot;Open Sans&quot;, Arial, sans-serif; text-align:justify; font-size:16px;\">In every 2 seconds, someone in the world needs blood. Donating blood can help:<br>1)People who go through disasters or emergency situations.<br> 2)People who lose blood during major surgeries.<br> 3)People who have lost blood because of a gastrointestinal bleed.<br>4)Women who have serious complications during pregnancy or childbirth.<br>5)People with cancer or severe anemia sometimes caused by thalassemia or sickle cell disease.</span>'),
-(7, 'Blood Groups', 'bloodgroups', '<span style=\"font-family:&quot;Open Sans&quot;, Arial, sans-serif; text-align:justify; font-size:16px;\">Blood group of any human being will mainly fall in any one of the following groups:</span><br><ul style=\"font-family:&quot;Open Sans&quot;, Arial, sans-serif; text-align:justify;font-size:16px;\"> <li>A positive or A negative</li><li>B positive or B negative</li><li>O positive or O negative</li><li>AB positive or AB negative</li></ul><br><span style=\"font=family:&quot;Open Sans&quot;, Arial, sans-serif; text-align:justify;font-size:16px\">Your Blood group is determined by the genes you inherit from your parents.<br>  A healty diet helps ensure a successful blood donation, and also makes you feel better! </span>'),
-(8, 'Universal Donors And Recepients', 'universal', '<span style=\" font-family:&quot;Open Sans&quot;, Arial, sans-serif; text-align:justify; font-size:16px;\"> The most common blood type is O, followed by type A.<br>  Type O individuals are often called \"Universal donors\" since their blood can be transfused into persons with any blood type.Those with type AB blood are called \"universal recipients\" because they can receive blood of any type. <br><br> For emergency transfusion, blood group type O negative blood is the variety of blood that has lowest risk of causing serious reactions for most people who receive it. Because of this, it\\\'s sometimes called the universal blood donor type.</span>');
+(1, 'Article', 'articles', 'Blood donation is an act of altruism that can have a profound impact on the lives of countless individuals. It is a simple, yet incredibly powerful way to give back to your community and save lives. Donated blood is used for various medical purposes, from emergency situations and surgeries to chronic illness treatments.<br><br>Blood donation is a noble act with far-reaching benefits. By donating blood, you become a lifesaver, a source of hope for those in dire need, and a guardian of your own health. Regular donors provide an invaluable resource that supports medical treatments and emergency care. It is a tangible way to make a positive impact on your community and society as a whole. The act of blood donation embodies the essence of altruism, compassion, and social responsibility, reminding us that a simple gesture can have a profound effect on the lives of others. Consider becoming a blood donor and experience the joy of saving lives.<br><br>The most significant benefit of blood donation is the act of saving lives. Blood transfusions are crucial in emergency situations such as accidents, surgeries, and childbirth complications. Donated blood can be a lifeline for patients suffering from medical conditions like cancer, anemia, and blood disorders. Your donation could mean the difference between life and death for someone in need.<br><br>Giving blood is a demonstration of social responsibility. It is a simple yet impactful way to contribute to the well-being of society as a whole. Communities rely on the generosity of donors to maintain a stable blood supply, which is essential for the healthcare system to function effectively. '),
+(2, 'Why Become Donor', 'donor', 'Blood is the most precious gift that anyone can give to another-A gift of life. A decision to donate your blood can save a life, or even several if your blood is separated to its components-red cells, platelets and plasma- which can be used individually for patients with specific conditions. Safe blood saves lives and improves health. Blood transfusion is needed for: \n<ul>\n<li>Women with complications of pregnancy, such as ectopic pregnancies and haemorrage before, during and after childbirth.</li>\n<li>People with severe trauma following man-made and natural disasters.</li>\n<li>Children with severe anaemia often resulting from malaria or malnutrition.</li>\n<li>Many complex medical and surgical procedures and cancer patients.</li>\n</ul>\nIt is also needed for regular transfusion for people with conditions such as thalassaemia and sickle cell disease and is used to make products as clotting factors for people with homophilia. There is a constant need for regular blood supply cause blood can be stored for only a limited time before use.Regular blood donations by a sufficient number of healthy people needed to ensure that safe blood will be available whenever wherever needed.'),
+(3, 'About Us ', 'aboutus', 'Blood bank is a place where blood bag that is collected from blood donation events is stored in one place. The term “blood bank” refers to a division of a hospital laboratory where the storage of blood product occurs and where proper testing is performed to reduce the risk of transfusion related events . The process of managing the blood bag that is received from the blood donation events needs a proper and systematic management. The blood bag must be handled with care and treated thoroughly as it is related to someone’s life. The development of Web-based Blood Bank And Donation Management System is proposed to provide a management functional to the blood bank in order to handle the blood bag and to make entries of the individuals who want to donate blood and who are in need.'),
+(4, 'The need For Blood', 'needforblood', 'There are many reasons patients need blood. A common misunderstanding about blood usage is that accident victims are the patients who use the most blood include those:<br>     1)Being treated for cancer.<br>   2) Undergoing orthopedic surgeries<br>   3)Undergoing cardiovascular surgeries<br>  4) Being treated for inherited blood disorders.\n'),
+(5, 'Blood Tips', 'bloodtips', '1)You must be in good health.<br> 2) Hydrate and eat a healthy meal before your donation.<br>3)You\'re never too old to donate blood.<br> 4)Rest and relaxed.<br> 5)Don\'t forget your FREE post-donation snack.'),
+(6, 'Who You Could Help', 'whoyouhelp', 'In every 2 seconds, someone in the world needs blood. Donating blood can help:<br>1)People who go through disasters or emergency situations.<br> 2)People who lose blood during major surgeries.<br> 3)People who have lost blood because of a gastrointestinal bleed.<br>4)Women who have serious complications during pregnancy or childbirth.<br>5)People with cancer or severe anemia sometimes caused by thalassemia or sickle cell disease.'),
+(7, 'Blood Groups', 'bloodgroups', 'Blood group of any human being will mainly fall in any one of the following groups:<ul> <li>A positive or A negative</li><li>B positive or B negative</li><li>O positive or O negative</li><li>AB positive or AB negative</li></ul>Your Blood group is determined by the genes you inherit from your parents.'),
+(8, 'Universal Donors And Recepients', 'universal', ' The most common blood type is O, followed by type A. Type O individuals are often called \"Universal donors\" since their blood can be transfused into persons with any blood type.Those with type AB blood are called \"universal recipients\" because they can receive blood of any type. <br><br> For emergency transfusion, blood group type O negative blood is the variety of blood that has lowest risk of causing serious reactions for most people who receive it. Because of this, it\\\'s sometimes called the universal blood donor type.'),
+(9, 'Donation benefits', 'benefits', 'Donating blood is a noble act with a multitude of benefits. Firstly, it\'s a lifesaving endeavor;\r\n                                         a single donation can potentially save up to three lives by providing crucial blood components needed for medical treatments, surgeries, and emergencies. \r\n                                         Ensuring your well-being while helping maintain balanced iron levels in your body. '),
+(10, 'Disease Protection', 'protection', 'Donating blood not only saves lives but also plays a crucial role in disease protection. \r\n                                        Regular blood donations help reduce the risk of several diseases, including heart disease and cancer, by maintaining healthy iron levels in the body.'),
+(12, 'How to Donate?', 'howto', 'To get started, ensure you meet the eligibility criteria, \r\n                                        which typically include being at least 17 years old, weighing a minimum of 110 pounds, and being in good health.\r\n                                         Once you\'ve confirmed your eligibility, find a nearby blood donation center or mobile blood drive, \r\n                                        often hosted by hospitals, clinics, or community organizations. ');
 
 -- --------------------------------------------------------
 
@@ -320,13 +326,13 @@ ALTER TABLE `contact_info`
 -- AUTO_INCREMENT for table `contact_query`
 --
 ALTER TABLE `contact_query`
-  MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `query_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `donor_details`
 --
 ALTER TABLE `donor_details`
-  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `donor_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `needblood`
@@ -338,7 +344,7 @@ ALTER TABLE `needblood`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

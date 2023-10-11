@@ -1,3 +1,4 @@
+<?php include 'db_Conn.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,8 +46,7 @@ include('header.php');
         </div>
     </section>
     <!-- Sub Header End -->
-
-    <!-- Articles Start -->
+            <!-- Articles Start -->
             <section id="articles">
                 <div class="container">
                     <h2 style="display: inline-block;">Articles</h2>
@@ -65,11 +65,18 @@ include('header.php');
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">Blood Types</h4>
-                                        <p class="card-text">Blood types are classified based as:
- There are four main blood types: A, B, AB, and O. 
-These are determined by the presence or absence of two antigens, A and B, on the surface of red blood cells.
- Blood type A has A antigens, blood type B has B antigens, blood type AB has both A and B antigens, and blood type O has neither A nor B antigens. 
-</p>
+                                        <p class="card-text">
+                                            <?php 
+                                        
+                                            $q="select * from pages where page_type='bloodgroups'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?>
+                                           </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>
@@ -86,9 +93,16 @@ These are determined by the presence or absence of two antigens, A and B, on the
                                     <div class="card-body">
                                         <h4 class="card-title">Donations Benefits</h4>
                                         <p class="card-text">
-                                        Donating blood is a noble act with a multitude of benefits. Firstly, it's a lifesaving endeavor;
-                                         a single donation can potentially save up to three lives by providing crucial blood components needed for medical treatments, surgeries, and emergencies. 
-                                         Ensuring your well-being while helping maintain balanced iron levels in your body. </p>
+                                        <?php 
+                                            $q="select * from pages where page_type='benefits'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?>
+                                         </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>
@@ -104,8 +118,17 @@ These are determined by the presence or absence of two antigens, A and B, on the
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">Disease Protection</h4>
-                                        <p class="card-text">Donating blood not only saves lives but also plays a crucial role in disease protection. 
-                                        Regular blood donations help reduce the risk of several diseases, including heart disease and cancer, by maintaining healthy iron levels in the body.
+                                        <p class="card-text">
+                                        <?php 
+                                            $q="select * from pages where page_type='protection'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?>
+                                        </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>
@@ -121,10 +144,17 @@ These are determined by the presence or absence of two antigens, A and B, on the
                                     </div>
                                     <div class="card-body">
                                         <h4 class="card-title">How To Donate?</h4>
-                                        <p class="card-text">To get started, ensure you meet the eligibility criteria, 
-                                        which typically include being at least 17 years old, weighing a minimum of 110 pounds, and being in good health.
-                                         Once you've confirmed your eligibility, find a nearby blood donation center or mobile blood drive, 
-                                        often hosted by hospitals, clinics, or community organizations. </p>
+                                        
+                                        <p class="card-text">
+                                        <?php 
+                                            $q="select * from pages where page_type='howto'";
+                                            $result=mysqli_query($conn, $q);
+                                            if(mysqli_num_rows($result)>0){
+                                                while($row=mysqli_fetch_assoc($result)){
+                                                    echo $row['page_data'];
+                                                }
+                                            }
+                                            ?> </p>
                                         <div class="btn-cont">
                                             <button class="card-btn"
                                                 onclick="window.location.href = 'article.php';">Details</button>
@@ -147,7 +177,6 @@ These are determined by the presence or absence of two antigens, A and B, on the
         <div class="container">
            
             <?php
-            include 'db_Conn.php';
                 $q= "select * from donor_details inner join city on donor_details.donor_city = city.city_name order by rand() limit 3"; 
                  $result = mysqli_query($conn, $q) or die('Query unsuccessful.');
                  if(mysqli_num_rows($result)>0){
